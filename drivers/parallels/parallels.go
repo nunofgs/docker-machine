@@ -141,15 +141,6 @@ func (d *Driver) PreCreateCheck() error {
 		return fmt.Errorf("Parallels Desktop version could not be parsed: %s", stdout)
 	}
 
-	ver, err := strconv.Atoi(res[1])
-	if err != nil {
-		return err
-	}
-
-	if ver < 11 {
-		return fmt.Errorf("Driver \"parallels\" supports only Parallels Desktop 11 and higher. You use: Paralells Desktop %d.", ver)
-	}
-
 	return nil
 }
 
